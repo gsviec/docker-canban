@@ -37,7 +37,7 @@ services:
         image: nginx
         restart: 'no'
         volumes:
-            - ./:/var/www
+            - ./scripts:/var/www
         command: sh download-wp.sh
 
    
