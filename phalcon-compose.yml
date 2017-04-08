@@ -17,8 +17,8 @@ services:
         restart: always
         working_dir: /var/www
         volumes:
-            - ./wordpress:/var/www/
-            - ./conf/nginx/gsviec.conf:/etc/nginx/conf.d/default.conf
+            - ./phalcon:/var/www/
+            - ./conf/nginx/phalcon.conf:/etc/nginx/conf.d/default.conf
         links:
             - phpfpm
     
@@ -29,16 +29,20 @@ services:
         ports:
             - "8080:80"
         volumes:
-            - ./wordpress:/var/www
+            - ./phalcon:/var/www
+            - ./conf/php/fpm.ini://etc/php/7.0/fpm/php.ini
         depends_on:
             - mysql
-    download: 
-
-        image: nginx
+    composer:
         restart: 'no'
+        image: phalconphp/composer
+        command: install --no-dev
+        working_dir: /var/www
         volumes:
-            - ./scripts:/var/www
-        command: sh download-wp.sh
+            - ./phalcon:/var/www
+    
 
-   
+volumes:
+  mysql:
+    driver: local
 

@@ -17,8 +17,8 @@ services:
         restart: always
         working_dir: /var/www
         volumes:
-            - ./wordpress:/var/www/
-            - ./conf/nginx/gsviec.conf:/etc/nginx/conf.d/default.conf
+            - ./laravel:/var/www/
+            - ./conf/nginx/laravel.conf:/etc/nginx/conf.d/default.conf
         links:
             - phpfpm
     
@@ -29,16 +29,10 @@ services:
         ports:
             - "8080:80"
         volumes:
-            - ./wordpress:/var/www
+            - ./laravel:/var/www
         depends_on:
             - mysql
-    download: 
-
-        image: nginx
-        restart: 'no'
-        volumes:
-            - ./scripts:/var/www
-        command: sh download-wp.sh
+    
 
    
 

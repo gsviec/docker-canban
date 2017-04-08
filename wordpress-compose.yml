@@ -18,7 +18,7 @@ services:
         working_dir: /var/www
         volumes:
             - ./wordpress:/var/www/
-            - ./conf/nginx/gsviec.conf:/etc/nginx/conf.d/default.conf
+            - ./conf/nginx/wordpress.conf:/etc/nginx/conf.d/default.conf
         links:
             - phpfpm
     

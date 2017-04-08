@@ -1,11 +1,11 @@
-FROM ubuntu
+FROM php:fpm
 
 MAINTAINER Phanbook <helllo@gsviec.com>
 
 # run update and install nginx, php-fpm and other useful libraries
-RUN apt-get update -y && \
-    apt-get install -y \
-    php-fpm php-mysql
+RUN curl -s https://packagecloud.io/install/repositories/phalcon/stable/script.deb.sh | bash
+
+
 
 
  VOLUME [ "/var/www/html" ]
@@ -15,4 +15,4 @@ RUN apt-get update -y && \
  EXPOSE 9000
 
 
- CMD ["php7-fpm.0"]
+CMD ["php-fpm"]
