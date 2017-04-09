@@ -32,13 +32,7 @@ services:
             - ./wordpress:/var/www
         depends_on:
             - mysql
-    download: 
-
-        image: nginx
-        restart: 'no'
-        volumes:
-            - ./scripts:/var/www
-        command: sh download-wp.sh
+   
 
    
 
