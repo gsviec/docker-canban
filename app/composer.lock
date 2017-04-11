@@ -1,0 +1,78 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "4387faf802508ad1c67e420cda7d3d10",
+    "packages": [
+        {
+            "name": "mfacenet/hello-world",
+            "version": "v1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mfacenet/hello-world.git",
+                "reference": "7ecb1fc312aa7c44296afee5e62f450ddb75bbc1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mfacenet/hello-world/zipball/7ecb1fc312aa7c44296afee5e62f450ddb75bbc1",
+                "reference": "7ecb1fc312aa7c44296afee5e62f450ddb75bbc1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "replace": {
+                "ehime/hello-world": "self.version"
+            },
+            "require-dev": {
+                "aws/aws-sdk-php": "dev-master",
+                "h4cc/phpqatools": "*",
+                "phpdocumentor/phpdocumentor": "2.8.*",
+                "rmccue/requests": ">=1.0"
+            },
+            "suggest": {
+                "zendframework/zendframework": "Most awesome framework ever"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "HelloWorld": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jd Daniel",
+                    "email": "dodomeki@gmail.com"
+                },
+                {
+                    "name": "Shawn Stratton",
+                    "email": "sstratton@php.net",
+                    "homepage": "http://mface.net",
+                    "role": "Jackass"
+                }
+            ],
+            "description": "My first Composer project",
+            "homepage": "http://github.com/engrade",
+            "keywords": [
+                "example",
+                "hello",
+                "world"
+            ],
+            "time": "2015-07-31T20:13:51+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

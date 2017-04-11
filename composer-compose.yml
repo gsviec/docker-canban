@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+    app:
+        restart: always
+        image: php:7
+        command: php -S 0.0.0.0:8000 /app/index.php
+        ports:
+            - "8000:8000"
+        volumes:
+            - ./app:/app
+
+    composer:
+        restart: 'no'
+        #image: composer/composer:php7
+        image: phalconphp/composer
+        command: install --no-dev
+        volumes:
+            - ./app:/app
