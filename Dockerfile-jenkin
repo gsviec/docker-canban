@@ -1,0 +1,13 @@
+FROM jenkins/jenkins:lts
+
+MAINTAINER Phanbook <helllo@gsviec.com>
+
+USER root
+RUN apt-get update -y
+RUN apt-get install python-setuptools -y
+RUN easy_install pip
+
+RUN pip install ansible
+USER jenkins
+
+RUN ansible-galaxy install carlosbuenosvinos.ansistrano-deploy carlosbuenosvinos.ansistrano-rollback
